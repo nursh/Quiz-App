@@ -3,7 +3,7 @@ import React from "react";
 function App() {
   return (
     <div>
-      <h1>Welcome to Quizzimo</h1>
+      <h1>Enter your name</h1>
     </div>
   );
 }
