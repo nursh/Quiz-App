@@ -1,1 +1,2 @@
-export const FETCH_TOKEN = 'token';
+export const FETCH_TOKEN = 'FETCH_TOKEN';
+export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';

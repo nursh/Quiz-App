@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { fetchToken } from './redux/actions';
+import { connect } from "react-redux";
+import { fetchToken, fetchCategories } from "./redux/actions";
 
 class App extends Component {
-
   componentDidMount() {
     this.props.fetchToken();
+    this.props.fetchCategories();
   }
 
   render() {
@@ -17,8 +17,8 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ token }) => ({ token })
+const mapStateToProps = ({ token }) => ({ token });
 export default connect(
   mapStateToProps,
-  { fetchToken }
+  { fetchToken, fetchCategories }
 )(App);

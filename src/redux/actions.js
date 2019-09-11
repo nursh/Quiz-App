@@ -1,7 +1,14 @@
 import axios from "axios";
-import { FETCH_TOKEN } from "./actionTypes";
+import { FETCH_TOKEN, FETCH_CATEGORIES } from "./actionTypes";
+
 
 export const fetchToken = () => async dispatch => {
   const res = await axios.get('https://opentdb.com/api_token.php?command=request');
-  dispatch({ type: FETCH_TOKEN, payload: res.data })
+  dispatch({ type: FETCH_TOKEN, payload: res.data });
 };
+
+
+export const fetchCategories = () => async dispatch => {
+  const res = await axios.get('https://opentdb.com/api_category.php');
+  dispatch({ type: FETCH_CATEGORIES, payload: res.data });
+}
