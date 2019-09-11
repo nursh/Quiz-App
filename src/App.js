@@ -1,11 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { fetchToken } from './redux/actions';
 
-function App() {
-  return (
-    <div>
-      <h1>Enter your name</h1>
-    </div>
-  );
+class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchToken();
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Enter your name</h1>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = ({ token }) => ({ token })
+export default connect(
+  mapStateToProps,
+  { fetchToken }
+)(App);
