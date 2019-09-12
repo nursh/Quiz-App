@@ -17,7 +17,7 @@ class Categories extends Component {
     if (categories.length > 0) {
       categoryData = filterCategories(categories);
       return (
-        <div className="bg-red-400 mx-auto sm:w-full md:w-10/12 lg:w-9/12 ">
+        <div className="mx-auto sm:w-full md:w-10/12 lg:w-9/12 ">
           {
             categoryData.map(category => <Category category={category} key={category.name}/>)
           }
