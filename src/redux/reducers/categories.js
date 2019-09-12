@@ -8,7 +8,10 @@ const initialState = {
 export default function (state = initialState, action) {
   switch(action.type) {
     case FETCH_CATEGORIES:
-      return action.payload
+      return {
+        ...state,
+        categories: action.payload
+      };
     default: 
       return state;
   }

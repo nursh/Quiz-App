@@ -10,5 +10,6 @@ export const fetchToken = () => async dispatch => {
 
 export const fetchCategories = () => async dispatch => {
   const res = await axios.get('https://opentdb.com/api_category.php');
-  dispatch({ type: FETCH_CATEGORIES, payload: res.data });
+  const { trivia_categories: categories } = res.data;
+  dispatch({ type: FETCH_CATEGORIES, payload: categories });
 }
