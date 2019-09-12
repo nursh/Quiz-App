@@ -1,26 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
-import Categories from './components/Categories';
-import { fetchToken } from "./redux/actions";
+import Home from "./components/Home";
 
-class App extends Component {
-  componentDidMount() {
-    this.props.fetchToken();
-  }
-
-  render() {
-    return (
-      <div>
-        <Categories />
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = ({ token }) => ({ token });
-export default connect(
-  mapStateToProps,
-  { fetchToken }
-)(App);
+export default () => (
+  <Router>
+    <div>
+      <Route exact path="/" component={Home} />
+    </div>
+  </Router>
+);
