@@ -17,10 +17,13 @@ class Categories extends Component {
     if (categories.length > 0) {
       categoryData = filterCategories(categories);
       return (
-        <div className="mx-auto sm:w-full md:w-10/12 lg:w-9/12 ">
-          {
-            categoryData.map(category => <Category category={category} key={category.name}/>)
-          }
+        <div className="mx-auto sm:w-full md:w-10/12 lg:w-9/12 pt-8">
+          <h2 className="text-center text-xl md:text-2xl xl:text-4xl mb-6 font-semibold ">Choose a category</h2>
+          <div className="flex justify-between flex-wrap">
+            {
+              categoryData.map(category => <Category category={category} key={category.name}/>)
+            }
+          </div>
         </div>
       );
     }

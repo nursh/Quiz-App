@@ -3,6 +3,11 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+    extend: {
+      width: {
+        '3/10': '30.0%'
+      }
+    },
     screens: {
       sm: '640px',
       md: '768px',

@@ -12,7 +12,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="bg-gray-200">
+      <div className="bg-gray-200 min-h-screen">
         <Categories />
       </div>
     )
